@@ -12,7 +12,7 @@ import { Page, EventData, MetricData, DashboardUpdateData } from './types';
 import { Loader2 } from 'lucide-react';
 
 // URL для загрузки кэша
-const EVENTS_API_URL = 'http://localhost:3002/api/events';
+const EVENTS_API_URL = 'https://pixanault.vercel.app/api/events';
 
 // ОПРЕДЕЛЯЕМ АКТУАЛЬНЫЕ НАЧАЛЬНЫЕ МЕТРИКИ
 const initialMetrics: MetricData[] = [
