@@ -2,7 +2,8 @@ import { MOCK_EVENTS } from './mockData';
 
 let chatHistory: any[] = [];
 // ВАЖНО: Используйте токен с правами "Inference"
-const HF_API_KEY = "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"; 
+const HF_API_KEY = ""; 
+
 const MODEL_ID = "Qwen/Qwen2.5-72B-Instruct";
 
 export const api = {
@@ -23,9 +24,9 @@ export const api = {
 
         // Очищаем историю и задаем системную роль
         chatHistory = [{ role: "system", content: systemInstruction }];
-        console.log("AI Аналитик Pixana готов к работе - api.ts:26");
+        console.log("AI Аналитик Pixana готов к работе - api.ts:27");
       } catch (error) {
-        console.error("Ошибка инициализации: - api.ts:28", error);
+        console.error("Ошибка инициализации: - api.ts:29", error);
       }
     },
 
@@ -57,7 +58,7 @@ export const api = {
         // Если ответ не OK, пробуем прочитать текст ошибки
         if (!response.ok) {
           const errorText = await response.text();
-          console.error("Детали ошибки сервера: - api.ts:60", errorText);
+          console.error("Детали ошибки сервера: - api.ts:61", errorText);
           throw new Error(`Ошибка ${response.status}: ${errorText.slice(0, 100)}`);
         }
 
@@ -76,7 +77,7 @@ export const api = {
         return aiText;
 
       } catch (error: any) {
-        console.error("Ошибка при отправке сообщения: - api.ts:79", error);
+        console.error("Ошибка при отправке сообщения: - api.ts:80", error);
         
         // Удаляем последнее сообщение пользователя, чтобы можно было повторить запрос
         chatHistory.pop();
