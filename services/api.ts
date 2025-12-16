@@ -2,7 +2,7 @@ import { MOCK_EVENTS } from './mockData';
 
 let chatHistory: any[] = [];
 // ВАЖНО: Используйте токен с правами "Inference"
-const HF_API_KEY = ""; 
+const HF_API_KEY = "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"; 
 
 const MODEL_ID = "Qwen/Qwen2.5-72B-Instruct";
 
